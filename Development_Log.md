@@ -28,5 +28,7 @@ What I did today:
     -Add Register View with POST method
     -Add new Register endpoint /api/auth/register/
     -test Register endpoint with httpie 
+    -Add login/, refresh/ endpoints
+    -Write users app test 
 
 
