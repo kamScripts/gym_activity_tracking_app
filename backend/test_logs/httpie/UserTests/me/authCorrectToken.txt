@@ -1,0 +1,22 @@
+kg00k@K MINGW64 ~/Documents/gym_activity_tracking_app (main)
+$ http GET :8000/api/auth/me/ "Authorization: Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODY5NDU2LCJpYXQiOjE3NzY4Njc2NTYsImp0aSI6IjE3ZDJhZGMyZWNlODQxNmFhZjI5MDE5MGNhNzAxNmNhIiwidXNlcl9pZCI6IjIzNzJmYzUzLThiZmMtNDhjNi1hM2FlLTlkNjJkMmExZjczMiJ9.ZqwMXRmOL0AfHiqeMWXnJD8_q5GkhnNEVn-KN8G2bNQ"
+HTTP/1.1 200 OK
+Allow: GET, HEAD, OPTIONS
+Content-Length: 87
+Content-Type: application/json
+Cross-Origin-Opener-Policy: same-origin
+Date: Wed, 22 Apr 2026 14:23:29 GMT
+Referrer-Policy: same-origin
+Server: WSGIServer/0.2 CPython/3.14.2
+Vary: Accept, origin
+X-Content-Type-Options: nosniff
+X-Frame-Options: DENY
+
+{
+    "email": "john@test.com",
+    "id": "2372fc53-8bfc-48c6-a3ae-9d62d2a1f732",
+    "username": "john"
+}
+
+
+

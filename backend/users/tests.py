@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from rest_framework.test import APIClient
 from rest_framework import status
+from rest_framework_simplejwt.tokens import RefreshToken
 from .models import User
 
 class RegisterTests(TestCase):
@@ -41,4 +42,62 @@ class RegisterTests(TestCase):
         payload = {**self.valid_payload, 'password': '123'}
         response = self.client.post(self.url, payload)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
-        
+
+class LoginTests(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.url = reverse('login')
+        self.user = User.objects.create_user(
+            username='john',
+            email='john@test.com',
+            password='secret123'
+        )
+
+    def test_login_returns_tokens(self):
+        response = self.client.post(self.url, {
+            'username': 'john',
+            'password': 'secret123'
+        })
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn('access', response.data)
+        self.assertIn('refresh', response.data)
+
+    def test_wrong_password_returns_401(self):
+        response = self.client.post(self.url, {
+            'username': 'john',
+            'password': 'wrongpassword'
+        })
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+class MeTests(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.url = reverse('me')
+        self.user = User.objects.create_user(
+            username='john',
+            email='john@test.com',
+            password='secret123'
+        )
+
+    def get_auth_client(self):
+        refresh = RefreshToken.for_user(self.user)
+        self.client.credentials(
+            HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}'
+        )
+        return self.client
+
+    def test_me_returns_user_data(self):
+        client = self.get_auth_client()
+        response = client.get(self.url)
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(response.data['username'], 'john')
+        self.assertEqual(response.data['email'], 'john@test.com')
+
+    def test_me_requires_auth(self):
+        response = self.client.get(self.url)
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_me_password_not_exposed(self):
+        client = self.get_auth_client()
+        response = client.get(self.url)
+        self.assertNotIn('password', response.data)
