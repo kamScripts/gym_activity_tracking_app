@@ -19,3 +19,14 @@ Next:
 - basic WEB app
 - test Integrity
 
+22/04/26
+What I did today:
+-Properly initialise django project + add JWT and REST_FRAMEWORK settings
+-users APP:
+    -initialise APP
+    -User Model & RegisterSerializer
+    -Add Register View with POST method
+    -Add new Register endpoint /api/auth/register/
+    -test Register endpoint with httpie 
+
+

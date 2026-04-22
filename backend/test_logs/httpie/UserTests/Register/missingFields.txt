@@ -1,0 +1,24 @@
+POST /api/auth/register/ HTTP/1.1
+Accept-Encoding: gzip, deflate, zstd
+Connection: keep-alive
+Content-Length: 20
+User-Agent: HTTPie/3.2.2
+Accept: application/json, */*;q=0.5
+Content-Type: application/json
+Host: localhost:8000
+
+{"username": "john"}
+
+HTTP/1.1 400 Bad Request
+Date: Wed, 22 Apr 2026 12:07:31 GMT
+Server: WSGIServer/0.2 CPython/3.14.2
+Content-Type: application/json
+Vary: Accept, origin
+Allow: POST, OPTIONS
+X-Frame-Options: DENY
+Content-Length: 133
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+{"username":["A user with that username already exists."],"email":["This field is required."],"password":["This field is required."]}
