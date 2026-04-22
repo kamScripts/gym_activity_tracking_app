@@ -1,5 +1,5 @@
 """
-URL configuration for backend project.
+URL configuration for workout_api project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.0/topics/http/urls/
@@ -15,16 +15,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
-from api.views import CreateUserView
+from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/user/register/', CreateUserView.as_view(), name='register'),
-    path('api/token/', TokenObtainPairView.as_view(), name='get_token'),
-    path('api/token/refresh/',TokenRefreshView.as_view(), name='refresh'),
-    path('api-auth/', include('rest_framework.urls')),
-    #path('api/', include('api.urls')),#anything what is not included above will be taken from api.urls
-
 ]
