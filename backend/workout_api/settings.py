@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-uk'
 
-TIME_ZONE = 'BST'
+TIME_ZONE = 'Europe/London'
 
 USE_I18N = True
 
