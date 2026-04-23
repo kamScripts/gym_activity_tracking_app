@@ -64,3 +64,6 @@ What I did today:
 - Management command  seed the exercises library
 - Test Exercises httpie
 - Test Exercises automated tests
+- Created plans App
+- plans models
+- updated admin site
