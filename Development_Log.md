@@ -45,3 +45,7 @@ METHOD:    GET  | PATH: /api/auth/me/       |-> returns current user data (requi
 METHOD:    POST | PATH: /api/auth/logout/   |-> blacklists refresh token
 
 Note: /me/ request requires header -> Authorization: 'Bearer {refresh.access_token}'
+Note: JWT tokens must be store in httpOnly cookie, only safe storage
+
+TO DO 
+Exercises endpoint app, models,serializers, views, urls
