@@ -81,6 +81,7 @@ class MeTests(TestCase):
 
     def get_auth_client(self):
         refresh = RefreshToken.for_user(self.user)
+        #Header to validate JWT TOKEN
         self.client.credentials(
             HTTP_AUTHORIZATION=f'Bearer {refresh.access_token}'
         )
@@ -101,3 +102,40 @@ class MeTests(TestCase):
         client = self.get_auth_client()
         response = client.get(self.url)
         self.assertNotIn('password', response.data)
+
+class LogoutTests(TestCase):
+    def setUp(self):
+        self.client = APIClient()
+        self.url = reverse('logout')
+        self.user = User.objects.create_user(
+            username='john',
+            email='john@test.com',
+            password='secret123'
+        )
+        self.refresh = RefreshToken.for_user(self.user)
+        self.client.credentials(
+            HTTP_AUTHORIZATION=f'Bearer {self.refresh.access_token}'
+        )
+
+    def test_logout_blacklists_refresh_token(self):
+        response = self.client.post(self.url, {
+            'refresh': str(self.refresh)
+        })
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_refresh_after_logout_returns_401(self):
+        self.client.post(self.url, {'refresh': str(self.refresh)})
+        response = self.client.post(
+            reverse('token_refresh'),
+            {'refresh': str(self.refresh)}
+        )
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+    def test_logout_without_token_returns_400(self):
+        response = self.client.post(self.url, {})
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_logout_requires_auth(self):
+        self.client.credentials()
+        response = self.client.post(self.url, {'refresh': str(self.refresh)})
+        self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)

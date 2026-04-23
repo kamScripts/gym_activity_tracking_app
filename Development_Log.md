@@ -30,5 +30,18 @@ What I did today:
     -test Register endpoint with httpie 
     -Add login/, refresh/ endpoints
     -Write users app test 
+    -Add me/ {refreshtoken} protected endpoint
+    -test me/
+    -Logout endpoint - blacklist current refresh token
+    TO DO: EXERCISES AND WORKOUTS ENDPOINTS
+23/04/26
 
+-----------------
+USERS APP ENDPOINTS:
+METHOD:    POST | PATH: /api/auth/register/ |-> create new user account
+METHOD:    POST | PATH: /api/auth/login/    |-> returns access + refresh tokens
+METHOD:    POST | PATH: /api/auth/refresh/  |-> get new access token using refresh token
+METHOD:    GET  | PATH: /api/auth/me/       |-> returns current user data (requires auth)
+METHOD:    POST | PATH: /api/auth/logout/   |-> blacklists refresh token
 
+Note: /me/ request requires header -> Authorization: 'Bearer {refresh.access_token}'
