@@ -96,3 +96,10 @@ What I did in this sprint:
 - automated tests
 - update admin 
 - add DRF nested router for auto plans auto urls setup 
+- start workout app
+- add workouts models
+
+TO DO:
+-
+- Standard workout logging - user starts workout, logs all exercises and marks workout complete
+- Workout Assistant flow - return defaults to walk the user through planned workout

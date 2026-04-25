@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'exercises',
     'plans',
+    'workouts',
     'rest_framework',
     'rest_framework_simplejwt.token_blacklist',
     'corsheaders'
