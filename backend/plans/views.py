@@ -23,14 +23,14 @@ class WorkoutUnitViewSet(ModelViewSet):
     serializer_class = WorkoutUnitSerializer
 
     def get_queryset(self):
-        plan_id = self.kwargs['plan_id']
+        plan_id = self.kwargs['plan_pk']
         return WorkoutUnit.objects.filter(
             plan_id=plan_id,
             plan__user=self.request.user
         )
 
     def perform_create(self, serializer):
-        plan_id = self.kwargs['plan_id']
+        plan_id = self.kwargs['plan_pk']
         try:
             plan = WorkoutPlan.objects.get(id=plan_id, user=self.request.user)
         except WorkoutPlan.DoesNotExist:
@@ -42,14 +42,14 @@ class PlanExerciseViewSet(ModelViewSet):
     serializer_class = PlanExerciseSerializer
 
     def get_queryset(self):
-        unit_id = self.kwargs['unit_id']
+        unit_id = self.kwargs['unit_pk']
         return PlanExercise.objects.filter(
             unit_id=unit_id,
             unit__plan__user=self.request.user
         )
 
     def perform_create(self, serializer):
-        unit_id = self.kwargs['unit_id']
+        unit_id = self.kwargs['unit_pk']
         try:
             unit = WorkoutUnit.objects.get(
                 id=unit_id,

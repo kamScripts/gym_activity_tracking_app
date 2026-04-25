@@ -10,3 +10,14 @@ sqlparse
 psycopg2-binary
 python-dotenv
 drf-nested-routers
+POST   /api/workouts/                            - start a workout
+GET    /api/workouts/                            - workout history
+GET    /api/workouts/<id>/                       - single workout with all sets
+PATCH  /api/workouts/<id>/                       - add notes, mark complete
+DELETE /api/workouts/<id>/
+
+POST   /api/workouts/<id>/sets/                  - log a set
+PATCH  /api/workouts/<id>/sets/<set_id>/         - edit a set
+DELETE /api/workouts/<id>/sets/<set_id>/
+
+GET    /api/plans/<id>/units/<unit_id>/prefill/  - autocomplete data
