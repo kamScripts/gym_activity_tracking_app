@@ -6,7 +6,7 @@ from plans.models import WorkoutPlan, WorkoutUnit, PlanExercise
 
 @admin.register(WorkoutPlan)
 class WorkoutPlanAdmin(admin.ModelAdmin):
-    list_display = ('name', 'created_at', 'id')
+    list_display = ('name', 'created_at', 'user', 'id')
 
 @admin.register(WorkoutUnit)
 class WorkoutUnitAdmin(admin.ModelAdmin):
