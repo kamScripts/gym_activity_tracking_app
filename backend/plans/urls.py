@@ -1,5 +1,7 @@
 from django.urls import path, include
 from rest_framework_nested import routers
+
+from workouts.views import PrefillView
 from .views import WorkoutPlanViewSet, WorkoutUnitViewSet, PlanExerciseViewSet
 
 router = routers.SimpleRouter()
@@ -15,4 +17,9 @@ urlpatterns = [
     path('', include(router.urls)),
     path('', include(plans_router.urls)),
     path('', include(units_router.urls)),
+    path(
+        'plans/<uuid:plan_id>/units/<uuid:unit_id>/prefill/',
+        PrefillView.as_view(),
+        name='prefill'
+    ),
 ]
