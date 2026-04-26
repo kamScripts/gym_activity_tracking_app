@@ -103,3 +103,12 @@ TO DO:
 -
 - Standard workout logging - user starts workout, logs all exercises and marks workout complete
 - Workout Assistant flow - return defaults to walk the user through planned workout
+
+<h1>26/04/26</h1>
+
+What I did today:
+-
+
+- Create Serializers for workouts and sets
+- Create Views(modelviewsets) for workouts and sets 
+
