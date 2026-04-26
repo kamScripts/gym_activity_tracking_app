@@ -54,6 +54,7 @@ class Set(models.Model):
 
     class Meta:
         ordering = ['logged_at']
+        unique_together = [['workout', 'exercise', 'set_number']]
 
     def __str__(self):
         return f"{self.exercise.name} set {self.set_number}"

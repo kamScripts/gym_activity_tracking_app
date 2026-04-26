@@ -111,4 +111,9 @@ What I did today:
 
 - Create Serializers for workouts and sets
 - Create Views(modelviewsets) for workouts and sets 
+- Configure Urls
+- Test with HTTPIE
+- UNIT test
+- register models to admin page
+- Add Set  model uniqueness constraint on workout, exercise, set_number
 

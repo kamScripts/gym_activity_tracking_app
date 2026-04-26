@@ -10,7 +10,7 @@ class WorkoutPlanAdmin(admin.ModelAdmin):
 
 @admin.register(WorkoutUnit)
 class WorkoutUnitAdmin(admin.ModelAdmin):
-    list_display = ('weekly_order', 'plan')
+    list_display = ('weekly_order', 'plan', 'id',)
     ordering = ('weekly_order','plan')
 
 @admin.register(PlanExercise)

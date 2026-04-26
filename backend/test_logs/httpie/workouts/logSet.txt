@@ -1,0 +1,26 @@
+POST /api/workouts/d88c268f-9876-402d-a9ec-a5591cf28888/sets/ HTTP/1.1
+Accept-Encoding: gzip, deflate, zstd
+Connection: keep-alive
+Content-Length: 128
+User-Agent: HTTPie/3.2.2
+Accept: application/json, */*;q=0.5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjA3NzIwLCJpYXQiOjE3NzcyMDU5MjAsImp0aSI6IjI4NGY2Y2RmY2IyODRlNDJhYzZmNDIzZmY2MjhkNmQyIiwidXNlcl9pZCI6IjU3YmIwZmEyLWNhODEtNDNhYy1iNjU4LTU1YWJmMTAwNjY1YyJ9.4brHaOQ-h5je0FjZeBfZm_F_lSrF_EYVmB4JSoCfo7g
+Host: localhost:8000
+
+{"exercise": "0a051250-bc3a-4e9b-b981-6be6fb7d18ef", "set_number": 1, "reps": 10, "weight_kg": "80.0", "rest_after_seconds": 90}
+
+HTTP/1.1 401 Unauthorized
+Date: Sun, 26 Apr 2026 12:51:26 GMT
+Server: WSGIServer/0.2 CPython/3.14.2
+Content-Type: application/json
+WWW-Authenticate: Bearer realm="api"
+Vary: Accept, origin
+Allow: GET, POST, HEAD, OPTIONS
+X-Frame-Options: DENY
+Content-Length: 172
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+{"detail":"Given token not valid for any token type","code":"token_not_valid","messages":[{"token_class":"AccessToken","token_type":"access","message":"Token is expired"}]}

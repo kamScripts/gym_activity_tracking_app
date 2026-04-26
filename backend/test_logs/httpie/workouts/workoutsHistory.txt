@@ -1,0 +1,23 @@
+GET /api/workouts/ HTTP/1.1
+Accept-Encoding: gzip, deflate, zstd
+Accept: */*
+Connection: keep-alive
+User-Agent: HTTPie/3.2.2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjEzOTMwLCJpYXQiOjE3NzcyMDg1MzAsImp0aSI6IjEzOTgxOGUwZjY3MjQxMDViZjI0YjA0M2I2NTljZmFiIiwidXNlcl9pZCI6IjU3YmIwZmEyLWNhODEtNDNhYy1iNjU4LTU1YWJmMTAwNjY1YyJ9.Roqgj2EzKHr8icHdh3qsHRDjS6hEWX7wpTeuDt0nsGg
+Host: localhost:8000
+
+
+
+HTTP/1.1 200 OK
+Date: Sun, 26 Apr 2026 13:30:16 GMT
+Server: WSGIServer/0.2 CPython/3.14.2
+Content-Type: application/json
+Vary: Accept, origin
+Allow: GET, POST, HEAD, OPTIONS
+X-Frame-Options: DENY
+Content-Length: 1089
+X-Content-Type-Options: nosniff
+Referrer-Policy: same-origin
+Cross-Origin-Opener-Policy: same-origin
+
+[{"id":"d88c268f-9876-402d-a9ec-a5591cf28888","plan":"4a8fc074-581e-4c02-9bff-90c737e8297e","plan_name":"Push Pull Legs","workout_unit":"27d8bc9d-cdb0-480a-9328-adfccb9922c3","unit_name":"Push A","started_at":"2026-04-26T13:46:25.028062+01:00","completed_at":"2026-04-25T15:30:00+01:00","warmup_notes":null,"notes":"felt strong","sets":[{"id":"bf1bbc14-8cc8-4b5d-aea7-26334fc283b9","exercise":"4954e5a5-6510-4e02-8f1b-09f95db632b2","exercise_name":"Barbell bench press","set_number":1,"reps":10,"weight_kg":"80.00","rest_after_seconds":90,"logged_at":"2026-04-26T14:05:51.041851+01:00"},{"id":"f78f50ed-dca4-4af0-935c-b0066eea6c3f","exercise":"4954e5a5-6510-4e02-8f1b-09f95db632b2","exercise_name":"Barbell bench press","set_number":2,"reps":10,"weight_kg":"90.00","rest_after_seconds":90,"logged_at":"2026-04-26T14:07:44.475838+01:00"},{"id":"37e5c09d-753f-48fb-a918-b1dc0779e252","exercise":"4954e5a5-6510-4e02-8f1b-09f95db632b2","exercise_name":"Barbell bench press","set_number":3,"reps":6,"weight_kg":"100.00","rest_after_seconds":90,"logged_at":"2026-04-26T14:15:06.300604+01:00"}]}]

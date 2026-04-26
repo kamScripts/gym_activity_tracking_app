@@ -1,0 +1,3 @@
+http POST :8000/api/workouts/ "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjA3NzIwLCJpYXQiOjE3NzcyMDU5MjAsImp0aSI6IjI4NGY2Y2RmY2IyODRlNDJhYzZmNDIzZmY2MjhkNmQyIiwidXNlcl9pZCI6IjU3YmIwZmEyLWNhODEtNDNhYy1iNjU4LTU1YWJmMTAwNjY1YyJ9.4brHaOQ-h5je0FjZeBfZm_F_lSrF_EYVmB4JSoCfo7g" \
+    plan="4a8fc074-581e-4c02-9bff-90c737e8297e" workout_unit="27d8bc9d-cdb0-480a-9328-adfccb9922c3"
+{"id":"d88c268f-9876-402d-a9ec-a5591cf28888","plan":"4a8fc074-581e-4c02-9bff-90c737e8297e","plan_name":"Push Pull Legs","workout_unit":"27d8bc9d-cdb0-480a-9328-adfccb9922c3","unit_name":"Push A","started_at":"2026-04-26T13:46:25.028062+01:00","completed_at":null,"warmup_notes":null,"notes":null,"sets":[]}
