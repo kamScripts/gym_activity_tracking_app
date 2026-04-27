@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+	<testsuite name="exercises.tests.ExerciseTests-20260426144254" tests="8" file="exercises/tests.py" time="2.200" timestamp="2026-04-26T14:42:56" failures="0" errors="0" skipped="0">
+		<testcase classname="exercises.tests.ExerciseTests" name="test_filter_by_compound" time="0.285" timestamp="2026-04-26T14:42:54" file="exercises\tests.py" line="65"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_filter_by_equipment_type" time="0.273" timestamp="2026-04-26T14:42:54" file="exercises\tests.py" line="61"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_filter_by_muscle_group" time="0.262" timestamp="2026-04-26T14:42:55" file="exercises\tests.py" line="57"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_list_equipment_types" time="0.280" timestamp="2026-04-26T14:42:55" file="exercises\tests.py" line="47"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_list_exercises" time="0.276" timestamp="2026-04-26T14:42:55" file="exercises\tests.py" line="52"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_list_muscle_groups" time="0.287" timestamp="2026-04-26T14:42:55" file="exercises\tests.py" line="42"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_retrieve_single_exercise" time="0.272" timestamp="2026-04-26T14:42:56" file="exercises\tests.py" line="72"/>
+		<testcase classname="exercises.tests.ExerciseTests" name="test_unauthenticated_returns_401" time="0.265" timestamp="2026-04-26T14:42:56" file="exercises\tests.py" line="79"/>
+	</testsuite>
+	<testsuite name="plans.tests.WorkoutPlanTests-20260426144254" tests="7" file="plans/tests.py" time="3.771" timestamp="2026-04-26T14:43:00" failures="0" errors="0" skipped="0">
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_add_exercise_to_unit" time="0.596" timestamp="2026-04-26T14:42:57" file="plans\tests.py" line="77"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_add_unit_to_plan" time="0.522" timestamp="2026-04-26T14:42:57" file="plans\tests.py" line="56"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_cannot_access_other_users_plan" time="0.535" timestamp="2026-04-26T14:42:58" file="plans\tests.py" line="49"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_cannot_add_unit_to_other_users_plan" time="0.529" timestamp="2026-04-26T14:42:58" file="plans\tests.py" line="67"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_create_plan" time="0.521" timestamp="2026-04-26T14:42:59" file="plans\tests.py" line="31"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_get_full_plan_tree" time="0.536" timestamp="2026-04-26T14:42:59" file="plans\tests.py" line="96"/>
+		<testcase classname="plans.tests.WorkoutPlanTests" name="test_list_only_own_plans" time="0.532" timestamp="2026-04-26T14:43:00" file="plans\tests.py" line="41"/>
+	</testsuite>
+	<testsuite name="users.tests.LoginTests-20260426144254" tests="2" file="users/tests.py" time="1.095" timestamp="2026-04-26T14:43:01" failures="0" errors="0" skipped="0">
+		<testcase classname="users.tests.LoginTests" name="test_login_returns_tokens" time="0.567" timestamp="2026-04-26T14:43:00" file="users\tests.py" line="56"/>
+		<testcase classname="users.tests.LoginTests" name="test_wrong_password_returns_401" time="0.527" timestamp="2026-04-26T14:43:01" file="users\tests.py" line="65"/>
+	</testsuite>
+	<testsuite name="users.tests.LogoutTests-20260426144254" tests="4" file="users/tests.py" time="1.081" timestamp="2026-04-26T14:43:02" failures="0" errors="0" skipped="0">
+		<testcase classname="users.tests.LogoutTests" name="test_logout_blacklists_refresh_token" time="0.274" timestamp="2026-04-26T14:43:01" file="users\tests.py" line="120"/>
+		<testcase classname="users.tests.LogoutTests" name="test_logout_requires_auth" time="0.266" timestamp="2026-04-26T14:43:01" file="users\tests.py" line="138"/>
+		<testcase classname="users.tests.LogoutTests" name="test_logout_without_token_returns_400" time="0.274" timestamp="2026-04-26T14:43:02" file="users\tests.py" line="134"/>
+		<testcase classname="users.tests.LogoutTests" name="test_refresh_after_logout_returns_401" time="0.266" timestamp="2026-04-26T14:43:02" file="users\tests.py" line="126"/>
+	</testsuite>
+	<testsuite name="users.tests.MeTests-20260426144254" tests="3" file="users/tests.py" time="0.810" timestamp="2026-04-26T14:43:03" failures="0" errors="0" skipped="0">
+		<testcase classname="users.tests.MeTests" name="test_me_password_not_exposed" time="0.268" timestamp="2026-04-26T14:43:02" file="users\tests.py" line="101"/>
+		<testcase classname="users.tests.MeTests" name="test_me_requires_auth" time="0.272" timestamp="2026-04-26T14:43:02" file="users\tests.py" line="97"/>
+		<testcase classname="users.tests.MeTests" name="test_me_returns_user_data" time="0.270" timestamp="2026-04-26T14:43:03" file="users\tests.py" line="90"/>
+	</testsuite>
+	<testsuite name="users.tests.RegisterTests-20260426144254" tests="6" file="users/tests.py" time="1.106" timestamp="2026-04-26T14:43:04" failures="0" errors="0" skipped="0">
+		<testcase classname="users.tests.RegisterTests" name="test_duplicate_email_returns_400" time="0.286" timestamp="2026-04-26T14:43:03" file="users\tests.py" line="32"/>
+		<testcase classname="users.tests.RegisterTests" name="test_missing_fields_returns_400" time="0.003" timestamp="2026-04-26T14:43:03" file="users\tests.py" line="37"/>
+		<testcase classname="users.tests.RegisterTests" name="test_password_is_hashed" time="0.277" timestamp="2026-04-26T14:43:03" file="users\tests.py" line="23"/>
+		<testcase classname="users.tests.RegisterTests" name="test_password_not_in_response" time="0.268" timestamp="2026-04-26T14:43:04" file="users\tests.py" line="28"/>
+		<testcase classname="users.tests.RegisterTests" name="test_register_success" time="0.271" timestamp="2026-04-26T14:43:04" file="users\tests.py" line="17"/>
+		<testcase classname="users.tests.RegisterTests" name="test_short_password_returns_400" time="0.002" timestamp="2026-04-26T14:43:04" file="users\tests.py" line="41"/>
+	</testsuite>
+	<testsuite name="workouts.tests.WorkoutTests-20260426144254" tests="8" file="workouts/tests.py" time="4.243" timestamp="2026-04-26T14:43:08" failures="0" errors="0" skipped="0">
+		<testcase classname="workouts.tests.WorkoutTests" name="test_cannot_start_workout_for_other_users_plan" time="0.524" timestamp="2026-04-26T14:43:04" file="workouts\tests.py" line="104"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_get_workout_with_sets" time="0.522" timestamp="2026-04-26T14:43:05" file="workouts\tests.py" line="65"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_history_only_shows_own_workouts" time="0.517" timestamp="2026-04-26T14:43:05" file="workouts\tests.py" line="117"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_log_set" time="0.527" timestamp="2026-04-26T14:43:06" file="workouts\tests.py" line="51"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_mark_workout_complete" time="0.534" timestamp="2026-04-26T14:43:06" file="workouts\tests.py" line="134"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_prefill_other_users_unit_returns_404" time="0.530" timestamp="2026-04-26T14:43:07" file="workouts\tests.py" line="92"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_prefill_returns_plan_defaults" time="0.547" timestamp="2026-04-26T14:43:08" file="workouts\tests.py" line="82"/>
+		<testcase classname="workouts.tests.WorkoutTests" name="test_start_workout" time="0.543" timestamp="2026-04-26T14:43:08" file="workouts\tests.py" line="42"/>
+	</testsuite>
+</testsuites>
