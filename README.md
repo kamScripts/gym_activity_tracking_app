@@ -58,7 +58,7 @@ env\Scripts\activate
 source env/bin/activate
 
 # 3. Install dependencies
-pip install -r requirements.txt
+pip install -r ./backend/dependecies.txt
 
 # 4. Run migrations
 python manage.py migrate
